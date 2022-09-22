@@ -21,7 +21,16 @@
     "noImplicitAny": false,
     "allowJs": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
-  "exclude": [],
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

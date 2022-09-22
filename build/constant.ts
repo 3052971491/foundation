@@ -1,1 +1,1 @@
-export const OUTPUT_DIR = 'dist'
+export const OUTPUT_DIR = 'dist';
