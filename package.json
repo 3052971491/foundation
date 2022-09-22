@@ -13,7 +13,9 @@
     "preview": "vite preview",
     "lint:eslint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "lint:prettier": "lint:prettier ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
-    "lint:stylelint": "stylelint \"**/*.{vue,less,postcss,css,scss}\" --fix"
+    "lint:stylelint": "stylelint \"**/*.{vue,less,postcss,css,scss}\" --fix",
+    "prepare": "husky install",
+    "lint": "lint-staged --allow-empty"
   },
   "dependencies": {
     "lodash-es": "^4.17.21",
@@ -22,6 +24,8 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
@@ -32,7 +36,9 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.4.0",
+    "husky": "^8.0.1",
     "less": "^4.1.3",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.16",
     "postcss-less": "^6.0.0",
     "postcss-scss": "^4.0.5",
@@ -47,5 +53,26 @@
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
+  },
+  "lint-staged": {
+    "*.{vue,js,vue,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{css,scss,less,styl,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
