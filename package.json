@@ -18,6 +18,7 @@
   "dependencies": {
     "lodash-es": "^4.17.21",
     "mitt": "^3.0.0",
+    "pinia": "^2.0.22",
     "vue": "^3.2.37"
   },
   "devDependencies": {
