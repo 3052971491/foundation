@@ -30,6 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Login to Registry
+        run: docker login --username=yuanjunjie --password yjj541823.0.
+
       - name: run
         run: |
           sudo su
