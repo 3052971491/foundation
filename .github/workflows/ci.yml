@@ -13,8 +13,6 @@ jobs:
 
       - name: build
         run: |
-          pwd
-          ls
           docker build -t yuanjunjie/foundation:dev .
 
       - name: Login to Registry
@@ -33,4 +31,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: run
-        run: docker run yuanjunjie/foundation:dev
+        run: |
+        sudo su
+        docker run yuanjunjie/foundation:dev
