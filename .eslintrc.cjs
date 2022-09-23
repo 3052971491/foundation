@@ -48,6 +48,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     'vue/multi-word-component-names': 'off', //关闭组件命名规则
     'no-unused-vars': 'off',
+    'no-undef': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     indent: ['off', 2], // 缩进
   },
