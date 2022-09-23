@@ -33,4 +33,4 @@ jobs:
       - name: run
         run: |
           sudo su
-          docker run -d --name vueui yuanjunjie/foundation:dev
+          sudo docker run -d --name vueui yuanjunjie/foundation:dev
