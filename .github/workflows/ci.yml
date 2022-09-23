@@ -38,4 +38,4 @@ jobs:
       - name: run
         run: |
           sudo su
-          sudo docker run -d --name vueui yuanjunjie/foundation:dev
+          sudo docker run -p 8000:80 -d --name vueui yuanjunjie/foundation:dev
