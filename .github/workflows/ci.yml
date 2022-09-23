@@ -27,11 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install
-        run: npm install
-
-      # Runs a set of commands using the runners shell
-      - name: build app
-        run: npm run build
+        run: |
+            cd foundation
+            npm install
+            npm run build
         
       # upload
       - name: build app  
@@ -40,7 +39,7 @@ jobs:
             # SSH address  服务器地址
             host: ${{ secrets.DR_HOST }}
             # Remote dir path
-            target: ${{ secrets.DR_REMOTE_PATH }}
+            remote: ${{ secrets.DR_REMOTE_PATH }}
             # SSH User name
             username: ${{ secrets.DR_USER }}
             # key
