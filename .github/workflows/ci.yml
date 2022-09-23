@@ -20,7 +20,7 @@ jobs:
 
       - name: Push
         run: |
-          docker push yuanjunjie/nginx:dev
+          docker push yuanjunjie/foundation:dev
 
   deploy:
     needs: [build]
