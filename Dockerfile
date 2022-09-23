@@ -19,7 +19,7 @@ RUN yarn build
 RUN echo "build is success"
 
 # ================== STEP 2: Publish ==================
-FROM yuanjunjie/nginx:dev
+FROM nginx:1.19.6
 
 # 复制 nginx.conf 配置文件到镜像中
 COPY ["./_nginx/default.conf", "/etc/nginx/nginx.conf"]
