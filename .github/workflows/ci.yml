@@ -13,5 +13,6 @@ jobs:
 
       - name: Run Pull
         run: |
+          sudo su
           docker build -t yunjunjie/foundation:dev ./
           docker run yunjunjie/foundation:dev
