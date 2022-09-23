@@ -12,7 +12,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: build
-        run: docker build . --force-rm -t yuanjunjie/foundation:dev  -f .
+        run: |
+          pwd
+          cd 
+          docker build -t yuanjunjie/foundation:dev .
 
       - name: Login to Registry
         run: docker login --username=yuanjunjie --password yjj541823.0.
