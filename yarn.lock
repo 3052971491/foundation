@@ -867,7 +867,7 @@
     "@vue/compiler-core" "3.2.39"
     "@vue/shared" "3.2.39"
 
-"@vue/compiler-sfc@3.2.39", "@vue/compiler-sfc@^3.2.38":
+"@vue/compiler-sfc@3.2.39", "@vue/compiler-sfc@^3.2.29", "@vue/compiler-sfc@^3.2.38":
   version "3.2.39"
   resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.2.39.tgz#8fe29990f672805b7c5a2ecfa5b05e681c862ea2"
   integrity sha512-fqAQgFs1/BxTUZkd0Vakn3teKUt//J3c420BgnYgEOoVdTwYpBTSXCMJ88GOBCylmUBbtquGPli9tVs7LzsWIA==
@@ -5208,6 +5208,14 @@ vite-plugin-compression@^0.5.1:
     chalk "^4.1.2"
     debug "^4.3.3"
     fs-extra "^10.0.0"
+
+vite-plugin-vue-setup-extend@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vue-setup-extend/-/vite-plugin-vue-setup-extend-0.4.0.tgz#ebbbe265320039b8c6a3b9fcae3b8d152ecf4a13"
+  integrity sha512-WMbjPCui75fboFoUTHhdbXzu4Y/bJMv5N9QT9a7do3wNMNHHqrk+Tn2jrSJU0LS5fGl/EG+FEDBYVUeWIkDqXQ==
+  dependencies:
+    "@vue/compiler-sfc" "^3.2.29"
+    magic-string "^0.25.7"
 
 vite@^3.1.0:
   version "3.1.3"

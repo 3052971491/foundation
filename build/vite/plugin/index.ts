@@ -1,6 +1,7 @@
 import type { Plugin, PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { configCompressPlugin } from './compress';
 export function createVitePlugins(viteEnv: any, isBuild: boolean) {
   const {
@@ -13,6 +14,7 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[] | PluginOption | PluginOption[])[] = [
     vue(),
     vueJsx(),
+    VueSetupExtend(),
   ];
   // 以下插件只在生产环境中工作
   if (isBuild) {
