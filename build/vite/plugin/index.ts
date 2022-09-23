@@ -12,7 +12,9 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
     VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE,
   } = viteEnv;
   const vitePlugins: (Plugin | Plugin[] | PluginOption | PluginOption[])[] = [
-    vue(),
+    vue({
+      reactivityTransform: true, // 开启ref转换
+    }),
     vueJsx(),
     VueSetupExtend(),
   ];
