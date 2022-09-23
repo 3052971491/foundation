@@ -6,13 +6,28 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build
+        run: docker build . --force-rm -t yuanjunjie/foundation:dev  -f ./Dockerfile
+
+      - name: Login to Registry
+        run: docker login --username=yuanjunjie --password yjj541823.0.
+
+      - name: Push
+        run: |
+          docker push yuanjunjie/nginx:dev
+
+  deploy:
+    needs: [build]
+    name: Deploy
     runs-on: fd-dev
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run Pull
-        run: |
-          sudo su
-          docker build -t yunjunjie/foundation:dev ./
-          docker run yunjunjie/foundation:dev
+      - name: run
+        run: docker run yuanjunjie/foundation:dev
