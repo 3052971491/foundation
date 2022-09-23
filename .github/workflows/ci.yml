@@ -15,7 +15,7 @@ jobs:
         run: |
           pwd
           ls
-          docker build -t yuanjunjie/foundation:dev -f work/foundation/foundation/Dockerfile .
+          docker build -t yuanjunjie/foundation:dev .
 
       - name: Login to Registry
         run: docker login --username=yuanjunjie --password yjj541823.0.
