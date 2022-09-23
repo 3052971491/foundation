@@ -1,17 +1,25 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import { useLocale } from '/@/locales/useLocale';
+import { useI18n } from '/@/hooks/web/useI18n';
+import { LocalEnum } from '/@/enums/localEnum';
+const { changeLocale, getLocale } = useLocale();
+const { t } = useI18n();
+function hanlleChangeLocale() {
+  if (getLocale.value == LocalEnum.ZH_CN) {
+    changeLocale(LocalEnum.EN_US);
+  } else {
+    changeLocale(LocalEnum.ZH_CN);
+  }
+}
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <div>
+      <button @click="hanlleChangeLocale">切换语言</button>
+    </div>
+    {{ getLocale }} - {{ t('common.test') }}
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
