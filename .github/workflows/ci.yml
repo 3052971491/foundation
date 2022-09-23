@@ -33,7 +33,7 @@ jobs:
       - name: Login to Registry
         run: |
           sudo su
-          su docker login --username=yuanjunjie --password yjj541823.0.
+          sudo docker login --username=yuanjunjie --password yjj541823.0.
 
       - name: run
         run: |
