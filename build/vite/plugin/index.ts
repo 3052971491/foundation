@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { configCompressPlugin } from './compress';
+import { registerGlobComp } from './unplugin-components';
 export function createVitePlugins(viteEnv: any, isBuild: boolean) {
   const {
     VITE_USE_IMAGEMIN,
@@ -18,6 +19,10 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
     vueJsx(),
     VueSetupExtend(),
   ];
+
+  // 自动注册 src/components 下的组件
+  vitePlugins.push(registerGlobComp());
+
   // 以下插件只在生产环境中工作
   if (isBuild) {
     vitePlugins.push(

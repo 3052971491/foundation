@@ -15,6 +15,7 @@ function hanlleChangeLocale() {
 
 <template>
   <div>
+    <hello-world></hello-world>
     <div>
       <button @click="hanlleChangeLocale">
         {{ t('layout.setting.switchLanguage') }}
