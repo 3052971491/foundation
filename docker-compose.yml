@@ -1,16 +1,10 @@
 version: '3'
 
-networks:
-  hostnet:
-    external:
-      name: host
-
 services:
   vueui:
     container_name: vueui
     image: yuanjunjie/foundation:dev
     restart: always
+    network_mode: 'host'
     ports:
       - '8080:80'
-    networks:
-      - hostnet
