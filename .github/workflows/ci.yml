@@ -16,7 +16,7 @@ jobs:
           docker build -t yuanjunjie/foundation:dev .
 
       - name: Login to Registry
-        run: docker login --username={{ secrets.DOCKER_USER_NAME }} --password={{ secrets.DOCKER_PASSWORD }}
+        run: docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push
         run: |
@@ -33,7 +33,7 @@ jobs:
       - name: Login to Registry
         run: |
           sudo su
-          sudo docker login --username={{ secrets.DOCKER_USER_NAME }} --password={{ secrets.DOCKER_PASSWORD }}
+          sudo docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
       - name: run
         run: |
