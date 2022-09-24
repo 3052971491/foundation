@@ -27,6 +27,8 @@ COPY ["./_nginx/default.conf", "/etc/nginx/nginx.conf"]
 # 删除 nginx html 原有内容
 RUN rm -rf /usr/share/nginx/html/*
 
+EXPOSE 80
+
 # 从编译镜像复制编译结果到此镜像
 COPY --from=builder /app/dist /usr/share/nginx/html
 

@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  vueui:
+    container_name: vueui
+    image: yuanjunjie/foundation:dev
+    restart: always
+    ports:
+      - '8080:80'
