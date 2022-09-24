@@ -38,5 +38,5 @@ jobs:
       - name: run
         run: |
           sudo su
-          ls | grep docker
-          sudo docker compose up -f docker-compose.yml -d
+          ls 
+          sudo docker compose -f docker-compose.yml up -d
