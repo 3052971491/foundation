@@ -8,5 +8,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./HelloWorld.vue')['default']
+    SvgIcon: typeof import('./Icon/src/SvgIcon.vue')['default']
   }
 }

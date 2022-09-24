@@ -16,6 +16,7 @@ function hanlleChangeLocale() {
 <template>
   <div>
     <hello-world></hello-world>
+    <svg-icon name="vue"></svg-icon>
     <div>
       <button @click="hanlleChangeLocale">
         {{ t('layout.setting.switchLanguage') }}
