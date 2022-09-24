@@ -1,5 +1,10 @@
 version: '3'
 
+networks:
+  hostnet:
+    external:
+      name: host
+
 services:
   vueui:
     container_name: vueui
@@ -7,3 +12,5 @@ services:
     restart: always
     ports:
       - '8080:80'
+    networks:
+      - hostnet
