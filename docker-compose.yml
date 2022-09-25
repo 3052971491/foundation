@@ -1,9 +1,8 @@
 version: '3'
 
 networks:
-  nginx_net:
-    external:
-      name: web_net
+  web_net:
+    external: true
 
 services:
   vueui:
@@ -11,7 +10,6 @@ services:
     image: yuanjunjie/foundation:dev
     restart: always
     networks:
-      nginx_net:
-      ipv4_address: 172.32.0.4
+      - web_net:
     ports:
       - '8080:80'
