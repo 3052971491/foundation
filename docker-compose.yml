@@ -10,6 +10,6 @@ services:
     image: yuanjunjie/foundation:dev
     restart: always
     networks:
-      - web_net:
+      - web_net
     ports:
       - '8080:80'
