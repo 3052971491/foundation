@@ -10,12 +10,12 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "baseUrl": "./",
-    "types": ["vite/client"],
+    "types": ["vite/client", "jest"],
     "paths": {
       "/@/*": ["src/*"],
       "/#/*": ["types/*"]
@@ -36,6 +36,8 @@
     "types/**/*.d.ts",
     "types/**/*.ts",
     "vite.config.ts",
+    "tests/**/*.d.ts",
+    "tests/**/*.ts",
     "./components.d.ts"
   ],
   "exclude": ["node_modules"],
