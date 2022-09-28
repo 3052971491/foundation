@@ -12,9 +12,13 @@ module.exports = {
     '**/?(*.)+(spec|test).[tj]s?(x)',
     '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$',
   ],
+  testEnvironmentOptions: {
+    customExportConditions: ['node', 'node-addons'],
+  },
   testPathIgnorePatterns: ['/node_modules/'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.vue$': '@vue/vue3-jest', // 使用 vue-jest 帮助测试 .vue 文件
   },
   transformIgnorePatterns: ['/node_modules/'],
   // A map from regular expressions to module names that allow to stub out resources with a single module
