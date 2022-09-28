@@ -71,5 +71,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         },
       },
     },
+    optimizeDeps: {
+      include: ['vue', 'pinia', 'vue-i18n', 'lodash-es'],
+      exclude: [],
+    },
   };
 });
