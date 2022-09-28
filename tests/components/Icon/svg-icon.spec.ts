@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import SvgIcon from '/@/components/Icon';
+import SvgIcon from '/@/components/Icon/src/SvgIcon.vue';
 
 describe('SvgIcon', () => {
   it('renders correctly', () => {

@@ -33,6 +33,6 @@ module.exports = {
   verbose: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',
-  collectCoverageFrom: ['src/**/*.{ts,vue. tsx,jsx,js}'],
+  collectCoverageFrom: ['src/**/*.{ts,vue,tsx,jsx,js}'],
   coveragePathIgnorePatterns: ['^.+\\.d\\.ts$'],
 };
