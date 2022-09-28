@@ -5,26 +5,17 @@
     <br> 
     <br>
     <h1>Foundation</h1>
+
+    An out-of-the-box project launch template
+
 </div>
 
-**中文** | [English](./README.md)
+**简体中文** | [English](./README.md)
 
-## 简介
+## 特性
 
-项目开箱即用的启动模版，也可以作为一个示例，用于学习 vue3、vite、ts 等主流技术
-
-<!-- ## 功能
-
-- **特性一**：拖拽式可视化表单设计
-- **特性二**：支持运行时动态加载表单
-- **特性三**：支持表单复杂交互控制
-- **特性四**：支持全局CSS样式, 全局函数, 全局变量
-
-## 预览
-
-- [mt-form-vue](https://www.zczchen.top/mtform/)
-- [使用文档](./doc/readme.md)
-- [API文档](./doc/mt-form-vue%20api%E6%96%87%E6%A1%A3.md) -->
+- 开箱即用的高质量 Vue 框架。
+- 使用 vue3、vite、ts 等主流技术。
 
 ## 安装使用
 
