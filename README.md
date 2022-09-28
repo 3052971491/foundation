@@ -5,26 +5,21 @@
     <br> 
     <br>
     <h1>Foundation</h1>
+
+    An out-of-the-box project launch template
+
 </div>
 
-**English** | [中文](./README.zh-CN.md)
+**English** | [简体中文](./README.zh-CN.md)
 
-## Introduction
+## Features
 
-The project's out-of-the-box startup template can also be used as an example to learn mainstream technologies such as VUE3, Vite, and TS
+- High quality Vue framework out of the box。
+- Use Vue3, Vite, TS and other mainstream technologies。
 
-<!-- ## Feature
+## Change Log
 
-- **Features a**：Drag and drop visual form design
-- **Features b**：Supports dynamic loading of forms at runtime
-- **Features c**：Support complex interaction control of forms
-- **Features d**：Supports global CSS styles, global functions, and global variables
-
-## Preview
-
-- [mt-form-vue](https://www.zczchen.top/mtform/)
-- [Using document](./doc/readme.md)
-- [API documentation](./doc/mt-form-vue%20api%E6%96%87%E6%A1%A3.md) -->
+[Change Log](./CHANGELOG.en-US.md)
 
 ## Install and use
 
