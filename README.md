@@ -6,7 +6,7 @@
     <br>
     <h1>Foundation</h1>
 
-    一款开箱即用的项目启动模板
+    An out-of-the-box project launch template
 
 </div>
 
@@ -15,7 +15,11 @@
 ## Features
 
 - High quality Vue framework out of the box。
-- Use VUE3, Vite, TS and other mainstream technologies。
+- Use Vue3, Vite, TS and other mainstream technologies。
+
+## Change Log
+
+[Change Log](./CHANGELOG.en-US.md)
 
 ## Install and use
 
