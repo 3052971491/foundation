@@ -12,4 +12,6 @@ dist
 .husky
 .local
 /bin
+/coverage
+/stats.html
 Dockerfile

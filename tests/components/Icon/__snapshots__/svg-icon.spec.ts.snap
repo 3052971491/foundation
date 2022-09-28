@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SvgIcon renders correctly 1`] = `
+"<svg aria-hidden="true" class="svg-icon" width="1em" height="1em">
+  <use xlink:href="#icon-vue" fill="#333"></use>
+</svg>"
+`;
