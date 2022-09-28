@@ -44,7 +44,25 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         },
         keep_classnames: true,
       },
+      //构建后是否生成 source map 文件
+      sourcemap: false,
       chunkSizeWarningLimit: 2000,
+      //启用/禁用 CSS 代码拆分
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          // 最小化拆分包
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return id
+                .toString()
+                .split('node_modules/')[1]
+                .split('/')[0]
+                .toString();
+            }
+          },
+        },
+      },
     },
     css: {
       preprocessorOptions: {

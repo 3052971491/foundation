@@ -13,4 +13,5 @@ dist
 .local
 /bin
 /coverage
+/stats.html
 Dockerfile

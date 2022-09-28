@@ -53,6 +53,7 @@
     "postcss-less": "^6.0.0",
     "postcss-scss": "^4.0.5",
     "prettier": "^2.7.1",
+    "rollup-plugin-visualizer": "^5.8.2",
     "stylelint": "^14.11.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-rational-order": "^0.1.2",
