@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     AButton: typeof import('ant-design-vue/es')['Button']
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
     ADatePicker: typeof import('ant-design-vue/es')['DatePicker']
+    ASwitch: typeof import('ant-design-vue/es')['Switch']
     HelloWorld: typeof import('./HelloWorld.vue')['default']
     SvgIcon: typeof import('./Icon/src/SvgIcon.vue')['default']
   }

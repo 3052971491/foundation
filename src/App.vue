@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useLocale } from '/@/locales/useLocale';
+
 const { getAntdLocale } = useLocale();
 </script>
 

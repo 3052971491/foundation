@@ -4,7 +4,7 @@ import './styles/index.less';
 import App from './App.vue';
 import { setupStore } from '/@/stores/index';
 import { setupI18n } from '/@/locales/setupI18n';
-import { initAppConfigStore } from '/@/utils/app';
+import { initAppConfigStore } from '/@/utils/app/index';
 async function bootstrap() {
   const app = createApp(App);
   // 初始化store
