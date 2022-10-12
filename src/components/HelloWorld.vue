@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useLocale } from '/@/locales/useLocale';
 import { LocalEnum } from '/@/enums/localEnum';
 import { useI18n } from '/@/hooks/web/useI18n';
 
 import { useAppSetting } from '/@/hooks/setting/useAppSetting';
 import { ThemeEnum } from '/@/enums/appEnum';
-import layout from '../locales/lang/en/layout';
+
+import { http } from '/@/utils/http';
 
 const { getLocale, changeLocale } = useLocale();
 const { t } = useI18n();
@@ -30,6 +31,13 @@ const dark = ref(getDarkMode.value == ThemeEnum.DARK ? true : false);
 function handleChangeDark(checked) {
   setDarkMode(checked ? ThemeEnum.DARK : ThemeEnum.LIGHT);
 }
+
+function fetch() {
+  http.get({ url: '/DynamicMenu/GetList' });
+}
+onMounted(() => {
+  fetch();
+});
 </script>
 
 <template>
