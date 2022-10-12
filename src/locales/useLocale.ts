@@ -27,6 +27,12 @@ export function useLocale() {
   const getLocale = computed(() => localeStore.getLocale);
   const getShowLocalePicker = computed(() => localeStore.getShowPicker);
 
+  const getAntdLocale = computed((): any => {
+    return (
+      (i18n.global.getLocaleMessage(unref(getLocale)) as any)?.antdLocale ?? {}
+    );
+  });
+
   async function changeLocale(locale: LocalEnum) {
     const globalI18n = i18n.global;
     const currentLocale = unref(globalI18n.locale);
@@ -55,5 +61,6 @@ export function useLocale() {
     getLocale,
     getShowLocalePicker,
     changeLocale,
+    getAntdLocale,
   };
 }

@@ -7,6 +7,7 @@ import componentsPlugin from 'unplugin-vue-components/vite';
 //   HeadlessUiResolver,
 //   ElementUiResolver
 // } from 'unplugin-vue-components/resolvers'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
 export function registerGlobComp(): PluginOption | PluginOption[] {
   const plugins: PluginOption[] = [];
@@ -20,7 +21,7 @@ export function registerGlobComp(): PluginOption | PluginOption[] {
       // 搜索子目录
       deep: true,
       // 自定义组件的解析器
-      resolvers: [],
+      resolvers: [AntDesignVueResolver({ importStyle: 'less' })],
     })
   );
 

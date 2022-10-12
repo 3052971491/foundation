@@ -72,7 +72,14 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       },
     },
     optimizeDeps: {
-      include: ['vue', 'pinia', 'vue-i18n', 'lodash-es'],
+      include: [
+        'vue',
+        'pinia',
+        'vue-i18n',
+        'lodash-es',
+        'ant-design-vue/es/locale/zh_CN',
+        'ant-design-vue/es/locale/en_US',
+      ],
       exclude: [],
     },
   };

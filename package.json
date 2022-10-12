@@ -2,7 +2,6 @@
   "name": "foundation",
   "private": true,
   "version": "0.0.1",
-  "type": "module",
   "author": {
     "name": "junjieyuan",
     "email": "3052971491@qq.com"
@@ -19,6 +18,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "ant-design-vue": "^3.2.13",
     "lodash-es": "^4.17.21",
     "mitt": "^3.0.0",
     "pinia": "^2.0.22",

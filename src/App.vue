@@ -1,21 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useLocale } from '/@/locales/useLocale';
+const { getAntdLocale } = useLocale();
+</script>
 
 <template>
-  <hello-world></hello-world>
+  <a-config-provider :locale="getAntdLocale">
+    <hello-world></hello-world>
+  </a-config-provider>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

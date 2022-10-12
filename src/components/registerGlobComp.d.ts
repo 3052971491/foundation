@@ -7,6 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AButton: typeof import('ant-design-vue/es')['Button']
+    AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
+    ADatePicker: typeof import('ant-design-vue/es')['DatePicker']
     HelloWorld: typeof import('./HelloWorld.vue')['default']
     SvgIcon: typeof import('./Icon/src/SvgIcon.vue')['default']
   }
