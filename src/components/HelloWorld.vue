@@ -3,9 +3,9 @@ import { ref } from 'vue';
 import { useLocale } from '/@/locales/useLocale';
 import { LocalEnum } from '/@/enums/localEnum';
 import { useI18n } from '/@/hooks/web/useI18n';
-import 'ant-design-vue/dist/antd.variable.min.css';
+import lighter from 'ant-design-vue/dist/antd.variable.min.css';
+import darker from 'ant-design-vue/dist/antd.dark.min.css';
 import { ConfigProvider } from 'ant-design-vue';
-
 const { getLocale, changeLocale } = useLocale();
 
 const { t } = useI18n();
@@ -27,6 +27,33 @@ function handleChangeColor(e) {
 }
 
 const dark = ref(false);
+function handleChangeDark(checked: boolean) {
+  if (checked) {
+    // 明亮主题
+    addSkin(lighter);
+  } else {
+    // 暗色主题
+    addSkin(darker);
+  }
+}
+// 添加皮肤的方法
+function addSkin(content: string) {
+  let head = document.getElementsByTagName('head')[0];
+  const getStyle = head.getElementsByTagName('style');
+  // 查找style是否存在，存在的话需要删除dom
+  if (getStyle.length > 0) {
+    for (let i = 0, l = getStyle.length; i < l; i++) {
+      if (getStyle[i].getAttribute('data-type') === 'theme') {
+        getStyle[i].remove();
+      }
+    }
+  }
+  // 最后加入对应的主题和加载less的js文件
+  let styleDom = document.createElement('style');
+  styleDom.dataset.type = 'theme';
+  styleDom.innerHTML = content;
+  head.appendChild(styleDom);
+}
 </script>
 
 <template>
@@ -46,8 +73,9 @@ const dark = ref(false);
     <div>
       <a-switch
         v-model:checked="dark"
-        un-checked-children="黑暗"
-        checked-children="白天"
+        un-checked-children="暗黑"
+        checked-children="默认"
+        @change="handleChangeDark"
       ></a-switch>
     </div>
   </div>
