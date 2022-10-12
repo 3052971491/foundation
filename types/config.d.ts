@@ -10,3 +10,8 @@ export interface LocaleSetting {
   // 可用语言列表
   availableLocales: LocalEnum[];
 }
+
+/** 项目配置  */
+export interface ProjectConfig {
+  themeColor: string;
+}

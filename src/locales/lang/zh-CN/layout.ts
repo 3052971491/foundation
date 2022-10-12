@@ -2,6 +2,6 @@ export default {
   header: {},
   footer: {},
   setting: {
-    switchLanguage: '切换语言',
+    switchLanguage: '语言切换',
   },
 };

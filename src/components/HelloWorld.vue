@@ -3,11 +3,12 @@ import { ref } from 'vue';
 import { useLocale } from '/@/locales/useLocale';
 import { LocalEnum } from '/@/enums/localEnum';
 import { useI18n } from '/@/hooks/web/useI18n';
-import lighter from 'ant-design-vue/dist/antd.variable.min.css';
-import darker from 'ant-design-vue/dist/antd.dark.min.css';
-import { ConfigProvider } from 'ant-design-vue';
-const { getLocale, changeLocale } = useLocale();
 
+import { useAppSetting } from '/@/hooks/setting/useAppSetting';
+import { ThemeEnum } from '/@/enums/appEnum';
+import layout from '../locales/lang/en/layout';
+
+const { getLocale, changeLocale } = useLocale();
 const { t } = useI18n();
 
 function handleChangeLocale() {
@@ -16,43 +17,18 @@ function handleChangeLocale() {
   );
 }
 
-const systemColor = ref('#fb5430');
-ConfigProvider.config({
-  theme: { primaryColor: systemColor.value },
-});
+const { setThemeColor, setDarkMode, getThemeColor, getDarkMode } =
+  useAppSetting();
+const systemColor = ref(getThemeColor.value);
+
 function handleChangeColor(e) {
-  ConfigProvider.config({
-    theme: { primaryColor: e.target.value },
-  });
+  systemColor.value = e.target.value;
+  setThemeColor(e.target.value);
 }
 
-const dark = ref(false);
-function handleChangeDark(checked: boolean) {
-  if (checked) {
-    // 明亮主题
-    addSkin(lighter);
-  } else {
-    // 暗色主题
-    addSkin(darker);
-  }
-}
-// 添加皮肤的方法
-function addSkin(content: string) {
-  let head = document.getElementsByTagName('head')[0];
-  const getStyle = head.getElementsByTagName('style');
-  // 查找style是否存在，存在的话需要删除dom
-  if (getStyle.length > 0) {
-    for (let i = 0, l = getStyle.length; i < l; i++) {
-      if (getStyle[i].getAttribute('data-type') === 'theme') {
-        getStyle[i].remove();
-      }
-    }
-  }
-  // 最后加入对应的主题和加载less的js文件
-  let styleDom = document.createElement('style');
-  styleDom.dataset.type = 'theme';
-  styleDom.innerHTML = content;
-  head.appendChild(styleDom);
+const dark = ref(getDarkMode.value == ThemeEnum.DARK ? true : false);
+function handleChangeDark(checked) {
+  setDarkMode(checked ? ThemeEnum.DARK : ThemeEnum.LIGHT);
 }
 </script>
 
@@ -60,7 +36,9 @@ function addSkin(content: string) {
   <div class="flex justify-center items-center flex-col w-full h-full text-5xl">
     {{ t('common.hello') }}
     <div>
-      <a-button type="primary" @click="handleChangeLocale">切换语言</a-button>
+      <a-button type="primary" @click="handleChangeLocale">{{
+        t('layout.setting.switchLanguage')
+      }}</a-button>
       <a-date-picker></a-date-picker>
     </div>
     <div>
