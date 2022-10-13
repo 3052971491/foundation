@@ -4,6 +4,7 @@ import path from 'path';
 import { wrapperEnv } from './build/utils';
 import { createVitePlugins } from './build/vite/plugin/index';
 import { OUTPUT_DIR } from './build/constant';
+import { createProxy } from './build/vite/proxy';
 
 function pathResolve(dir: string) {
   return path.resolve(process.cwd(), '.', dir);
@@ -15,8 +16,10 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
   const isBuild = command === 'build';
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } =
+    viteEnv;
   return {
-    base: './',
+    base: VITE_PUBLIC_PATH,
     plugins: createVitePlugins(viteEnv, isBuild),
     resolve: {
       alias: [
@@ -34,6 +37,14 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         },
       ],
     },
+    // server: {
+    //   https: true,
+    //   // Listening on all local IPs
+    //   host: true,
+    //   port: VITE_PORT,
+    //   // Load proxy configuration from .env
+    //   proxy: createProxy(VITE_PROXY),
+    // },
     build: {
       minify: 'esbuild',
       outDir: OUTPUT_DIR,

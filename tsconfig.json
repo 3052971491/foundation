@@ -38,6 +38,7 @@
     "vite.config.ts",
     "tests/**/*.d.ts",
     "tests/**/*.ts",
+    "mock/**/*.ts",
     "./components.d.ts"
   ],
   "exclude": ["node_modules"],

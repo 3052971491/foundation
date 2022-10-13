@@ -2,6 +2,7 @@ import type { Plugin, PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import VueSetupExtend from 'vite-plugin-vue-setup-extend';
+import { configMockPlugin } from './mock';
 import { configCompressPlugin } from './compress';
 import { registerGlobComp } from './unplugin-components';
 import { createSvgIconsPlugin } from './svg-icons';
@@ -25,6 +26,9 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
 
   // 自动注册 src/components 下的组件
   vitePlugins.push(registerGlobComp());
+
+  // vite-plugin-mock
+  VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild));
 
   // 注册svg图标依赖
   vitePlugins.push(createSvgIconsPlugin());

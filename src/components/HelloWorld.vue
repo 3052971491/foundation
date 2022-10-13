@@ -7,7 +7,7 @@ import { useI18n } from '/@/hooks/web/useI18n';
 import { useAppSetting } from '/@/hooks/setting/useAppSetting';
 import { ThemeEnum } from '/@/enums/appEnum';
 
-import { http } from '/@/utils/http';
+import { getUserInfo } from '/@/api/demo/account';
 
 const { getLocale, changeLocale } = useLocale();
 const { t } = useI18n();
@@ -33,7 +33,9 @@ function handleChangeDark(checked) {
 }
 
 function fetch() {
-  http.get({ url: '/DynamicMenu/GetList' });
+  getUserInfo().then((res) => {
+    console.log(res);
+  });
 }
 onMounted(() => {
   fetch();
