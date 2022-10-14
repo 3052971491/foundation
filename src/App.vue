@@ -6,6 +6,6 @@ const { getAntdLocale } = useLocale();
 
 <template>
   <a-config-provider :locale="getAntdLocale">
-    <hello-world></hello-world>
+    <router-view />
   </a-config-provider>
 </template>
