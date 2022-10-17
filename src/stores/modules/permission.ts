@@ -107,6 +107,9 @@ export const usePermissionStore = defineStore('app-permission', {
         console.error(error);
       }
       // routes = [...routeList];
+      // const backMenuList = transformRouteToMenu(routeList as Menu);
+      const backMenuList = routes;
+      this.setBackMenuList(backMenuList as Array<Menu>);
       return routes;
     },
   },

@@ -12,16 +12,15 @@ const whitePathList: PageEnum[] = [LOGIN_PATH];
 export function createPermissionGuard(router: Router) {
   const permissionStore = usePermissionStoreWithOut();
   router.beforeEach(async (to, from, next) => {
-    // if (getIsDynamicAddedRoute) {
-    //   next();
-    //   return;
-    // }
+    if (permissionStore.getIsDynamicAddedRoute) {
+      next();
+      return;
+    }
     const routes = await permissionStore.buildRoutesAction();
-    console.log(routes);
-
     routes.forEach((route) => {
       router.addRoute(route);
     });
+    permissionStore.setDynamicAddedRoute(true);
     next();
   });
 }
