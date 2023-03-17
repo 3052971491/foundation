@@ -11,6 +11,7 @@ async function bootstrap() {
   // 配置多语言, 语言文件可能从服务器端获取
   await setupI18n(app);
   app.mount('#app');
+  // test
 }
 
 bootstrap();
