@@ -2,6 +2,6 @@
 
 <template>
   <div class="flex justify-center items-center w-full h-full text-5xl">
-    [docker 自动化部署]Hello, Foundation - 4
+    [docker 自动化部署]Hello, Foundation - 5
   </div>
 </template>
