@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: build
+      - name: Build docker
         run: |
           docker build -t yuanjunjie/foundation:dev .
 
-      - name: Login to Registry
+      - name: Login to Docker Registry
         run: docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Push
+      - name: Push to Docker Registry
         run: |
           docker push yuanjunjie/foundation:dev
 
@@ -33,14 +33,14 @@ jobs:
       - name: Update docker images
         run: |
           sudo su
-          sudo docker pull yuanjunjie/foundation:dev
+          docker pull yuanjunjie/foundation:dev
 
-      - name: Login to Registry
+      - name: Login to Docker Registry
         run: |
           sudo su
-          docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+          sudo docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
-      - name: run
+      - name: Run
         run: |
           sudo su
           ls 
