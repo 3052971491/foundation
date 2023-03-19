@@ -33,7 +33,7 @@ jobs:
       - name: Update docker images
         run: |
           sudo su
-          sudo su docker pull yuanjunjie/foundation:dev
+          sudo docker pull yuanjunjie/foundation:dev
 
       - name: Login to Docker Registry
         run: |
