@@ -30,6 +30,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Update docker images
+        run: |
+          sudo su
+          sudo docker pull yuanjunjie/foundation:dev
+
       - name: Login to Registry
         run: |
           sudo su
