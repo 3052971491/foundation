@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build docker1
+      - name: Build docker
         run: |
           docker build -t yuanjunjie/foundation:dev .
 
